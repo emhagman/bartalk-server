@@ -87,7 +87,7 @@ def login(request):
 
         # make sure it works
         try:
-            result = Database.connection.execute(query)
+            result = Database.connection.execute(query).first()
             if result:
                 request.session['user'] = True
                 return Database.success('login was successful!')
