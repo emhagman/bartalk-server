@@ -63,3 +63,5 @@ def register(request):
 
             # return validation errors
             return Database.errors(errors)
+    else:
+        return Database.error('invalid request')
