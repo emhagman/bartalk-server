@@ -19,7 +19,7 @@ class Database:
               meta,
               Column('id', Integer, primary_key=True),
               Column('name', String(32), nullable=False),
-              Column('email', String(512), nullable=False),
+              Column('email', String(512), nullable=False, unique=True),
               Column('birthday', Date, nullable=False),
               Column('password', String(512), nullable=False),
               Column('created', Date, default=datetime.datetime.now()))

@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2c57b0-90e5-48b4-97ae-ca4cbf0bad96" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bartalk/settings.py" afterPath="$PROJECT_DIR$/bartalk/settings.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tools/database.py" afterPath="$PROJECT_DIR$/tools/database.py" />
     </list>
     <ignored path="bartalk-server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,19 +36,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/bartalk/settings.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="18" selection-start="94" selection-end="94" vertical-scroll-proportion="0.09246575" vertical-offset="0" max-vertical-offset="2970">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="database.py" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="database.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tools/database.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="108" column="12" selection-start="3207" selection-end="3207" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="2142">
+            <state line="21" column="70" selection-start="518" selection-end="518" vertical-scroll-proportion="0.46232876" vertical-offset="54" max-vertical-offset="2142">
               <folding />
             </state>
           </provider>
@@ -81,10 +72,10 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tools/database.py" />
         <option value="$PROJECT_DIR$/bartalk/urls.py" />
         <option value="$PROJECT_DIR$/drinker/views.py" />
         <option value="$PROJECT_DIR$/bartalk/settings.py" />
+        <option value="$PROJECT_DIR$/tools/database.py" />
       </list>
     </option>
   </component>
@@ -442,13 +433,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tools/database.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="108" column="12" selection-start="3207" selection-end="3207" vertical-scroll-proportion="0.0" vertical-offset="324" max-vertical-offset="2142">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/drinker/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="38" column="24" selection-start="1192" selection-end="1192" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1296">
@@ -460,7 +444,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/bartalk/settings.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="18" selection-start="94" selection-end="94" vertical-scroll-proportion="0.09246575" vertical-offset="0" max-vertical-offset="2970">
+        <state line="3" column="18" selection-start="94" selection-end="94" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2970">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tools/database.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="21" column="70" selection-start="518" selection-end="518" vertical-scroll-proportion="0.46232876" vertical-offset="54" max-vertical-offset="2142">
           <folding />
         </state>
       </provider>
