@@ -1,5 +1,8 @@
 # Django settings for bartalk project.
 
+from tools.database import Database
+Database.connect()
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
