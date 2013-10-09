@@ -65,3 +65,35 @@ def register(request):
             return Database.errors(errors)
     else:
         return Database.error('invalid request')
+
+
+@csrf_exempt
+def login(request):
+
+    # check for post
+    if request.POST:
+
+        # get the values
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        # hash the password
+        salt = 'drunkdevs'
+        hashed_password = hashlib.sha512(password.encode('utf-8') + salt.encode('utf-8')).hexdigest()
+
+        # check database to see if they exist
+        query = Database.drinker.select().where(Database.drinker.c.email == email).\
+            where(Database.drinker.c.password == hashed_password)
+
+        # make sure it works
+        try:
+            result = Database.connection.execute(query)
+            if result:
+                request.session['user'] = True
+                return Database.success('login was successful!')
+            else:
+                return Database.error('username or password was incorrect')
+        except SQLAlchemyError:
+            return Database.error('error checking database')
+    else:
+        return Database.error('invalid request')
