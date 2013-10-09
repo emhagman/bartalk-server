@@ -36,7 +36,7 @@ def register(request):
         # make sure they pass validation
         if email and not re.match("[^@]+@[^@]+\.[^@]+", email):
             errors.append('invalid email')
-        if not parse(birthday):
+        if birthday and not parse(birthday):
             errors.append('invalid date')
 
         # make sure there are no errors
