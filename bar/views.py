@@ -9,4 +9,4 @@ import simplejson as json
 
 @csrf_exempt
 def list(request):
-    return HttpResponse(json.loads([{"name": "Kelly's Tap House", "address": "Heaven", "image": "http://drunkdevs.com/images/test.png"}]), content_type="application/json")
+    return HttpResponse(json.dumps([{"name": "Kelly's Tap House", "address": "Heaven", "image": "http://drunkdevs.com/images/test.png"}]), content_type="application/json")

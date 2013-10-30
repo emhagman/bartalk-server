@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0d2c57b0-90e5-48b4-97ae-ca4cbf0bad96" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/bartalk-server.iml" afterPath="$PROJECT_DIR$/.idea/bartalk-server.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/bar/views.py" afterPath="$PROJECT_DIR$/bar/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="bartalk-server.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -31,7 +28,7 @@
       <file leaf-file-name="views.py" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/drinker/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="28" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1872">
+            <state line="83" column="28" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="881" max-vertical-offset="1782">
               <folding />
             </state>
           </provider>
@@ -40,7 +37,7 @@
       <file leaf-file-name="views.py" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/bar/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="133" selection-start="416" selection-end="416" vertical-scroll-proportion="0.22297297" vertical-offset="0" max-vertical-offset="888">
+            <state line="11" column="21" selection-start="304" selection-end="304" vertical-scroll-proportion="0.22297297" vertical-offset="0" max-vertical-offset="888">
               <folding>
                 <element signature="e#0#35#0" expanded="true" />
               </folding>
@@ -543,13 +540,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/drinker/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="28" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1872">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/tools/database.py">
       <provider selected="true" editor-type-id="text-editor">
         <state line="106" column="113" selection-start="3108" selection-end="3206" vertical-scroll-proportion="0.0" vertical-offset="1558" max-vertical-offset="2142">
@@ -564,9 +554,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/drinker/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="28" selection-start="2553" selection-end="2553" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="1872">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/bar/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="133" selection-start="416" selection-end="416" vertical-scroll-proportion="0.22297297" vertical-offset="0" max-vertical-offset="888">
+        <state line="11" column="21" selection-start="304" selection-end="304" vertical-scroll-proportion="0.22297297" vertical-offset="0" max-vertical-offset="888">
           <folding>
             <element signature="e#0#35#0" expanded="true" />
           </folding>
