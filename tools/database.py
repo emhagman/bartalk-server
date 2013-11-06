@@ -55,7 +55,7 @@ class Database:
         # first define the connection if it doesnt exist
         if Database.engine is None:
             Database.engine = \
-                create_engine('postgresql://localhost:5432/bartalk', pool_size=20, max_overflow=0)
+                create_engine('postgresql://bartalk:bartalk@localhost:5432/bartalk', pool_size=20, max_overflow=0)
 
         # connect to our Database
         Database.connection = Database.engine.connect()
