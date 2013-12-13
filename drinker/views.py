@@ -90,7 +90,7 @@ def login(request):
             result = Database.connection.execute(query).first()
             if result:
                 request.session['user'] = True
-                return Database.success('login was successful!')
+                return Database.response(Database.object({"success": True, "user": result}))
             else:
                 return Database.error('username or password was incorrect')
         except SQLAlchemyError:

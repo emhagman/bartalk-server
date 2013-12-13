@@ -9,4 +9,8 @@ import simplejson as json
 
 @csrf_exempt
 def list(request):
-    return HttpResponse(json.dumps([{"name": "Kelly's Tap House", "address": "Heaven", "image": "http://drunkendevs.com/images/test.png"}]), content_type="application/json")
+    return HttpResponse(json.dumps([
+		{"name": "Kelly's Tap House", "address": "E Lancaster Ave, Bryn Mawr, PA", "image": "http://drunkendevs.com/images/test.png"},
+		{"name": "Erin's Pub", "address": "E Lancaster Ave, Bryn Mawr, PA", "image": "http://drunkendevs.com/images/test.png"},
+		{"name": "Maloney's Pub", "address": "E Lancaster Ave, Bryn Mawr, PA", "image": "http://drunkendevs.com/images/test.png"}
+		]), content_type="application/json")

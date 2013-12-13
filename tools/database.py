@@ -115,3 +115,8 @@ class Database:
     @staticmethod
     def success(msg):
         return HttpResponse(Database.object({'success': True, 'message': msg}), content_type="application/json")
+
+	# success
+    @staticmethod
+    def response(obj):
+        return HttpResponse(obj, content_type="application/json")
