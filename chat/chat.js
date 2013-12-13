@@ -2,44 +2,72 @@
 net = require('net');
  
 // Keep track of the chat clients
-var clients = [];
+var bars = {};
  
 // Start a TCP Server
 net.createServer(function (socket) {
  
-  // Identify this client
-  socket.name = socket.remoteAddress + ":" + socket.remotePort 
+	// Identify this client
+	socket.ip = socket.remoteAddress; 
+
+	// Handle incoming messages from clients.
+	socket.on('data', function (data) {
+
+		// parse the json data
+		data = JSON.parse(data);
+		console.log(data);
+
+		// get the command and do something
+		switch (data.command) {
+			case "join": {
+				
+				// add user data to the socket
+				socket.uid  = data.uid;
+				socket.name = data.name;
+				socket.bar  = data.bar;
+				socket.sex  = data.sex;
+				
+				// create chat for bar if it doesn't exist
+				// then add the user
+				if (!(socket.bar in bars)) {
+					bars[socket.bar] = [socket];
+				}
+
+				// success
+				socket.write(JSON.stringify({success: true}));
+				break;
+			}
+			case "leave": {
+				
+				// remove the person from the bar
+				bars[socket.bar].splice(bars[socket.bar].indexOf(socket), 1);
+				
+				// success
+				socket.write(JSON.stringify({success: true}));
+				break;
+			}
+			case "chat": {
+				sendToBar(bars[socket.bar], data.message);
+			}
+		}
+	});
+
+	// Remove the drinker from the list when it leaves
+	socket.on('end', function () {
+		bars[socket.bar].splice(bars[socket.bar].indexOf(socket), 1);
+		sendToBar(bars[socket.bar], socket.name + " has left the chat!");
+	});
+
+	// Send a message to all people in this bar
+	function sendToBar(bar, message) {
+		bar.forEach(function (client) {
+			var toSend = JSON.stringify({uid: sender.uid, name: sender.name, message: message});
+			console.log(toSend);
+			client.write(toSend);
+		});
+	}
  
-  // Put this new client in the list
-  clients.push(socket);
- 
-  // Send a nice welcome message and announce
-  socket.write("Welcome " + socket.name + "\n");
-  broadcast(socket.name + " joined the chat\n", socket);
- 
-  // Handle incoming messages from clients.
-  socket.on('data', function (data) {
-    broadcast(socket.name + "> " + data, socket);
-  });
- 
-  // Remove the client from the list when it leaves
-  socket.on('end', function () {
-    clients.splice(clients.indexOf(socket), 1);
-    broadcast(socket.name + " left the chat.\n");
-  });
-  
-  // Send a message to all clients
-  function broadcast(message, sender) {
-    clients.forEach(function (client) {
-      // Don't want to send it to sender
-      if (client === sender) return;
-      client.write(message);
-    });
-    // Log it to the server output too
-    process.stdout.write(message)
-  }
- 
-}).listen(5000);
+}).listen(9992);
  
 // Put a friendly message on the terminal of the server.
-console.log("Chat server running at port 5000\n");
+console.log("Chat server running at port 9992\n");
