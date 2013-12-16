@@ -19,17 +19,20 @@
         // the bars
         var bars = {};
 
+        // request login
+        socket.emit('login', { request: true });
+
         // first, check for the login
         socket.on('login', function (data) {
-        
+       
             // set data to the socket
-            socket.name   = data.name;
-            socket.barId  = data.barId;
             socket.userId = data.userId;
-            
+            socket.barId  = data.barId;
+            socket.name   = data.name;
+
             // check to see if the bar exists first
             if (data.barId in bars) {
-                bars[data.barId].append(socket);
+                bars[data.barId].push(socket);
             } else {
                 bars[data.barId] = [socket];
             }
@@ -49,7 +52,14 @@
 
         // get a list of people in the bar
         socket.on('list', function (data) {
-            socket.emit('list', bars[socket.barId]);
+                
+            // build list from sockets
+            var bar = bars[socket.barId];
+            var drinkers = [];
+            for (var i=0; i<bar.length; i++) {
+                drinkers.push({ name: bar[i].name, userId: bar[i].userId });
+            }
+            socket.emit('list', { "drinkers": drinkers });
         });
 
     });
